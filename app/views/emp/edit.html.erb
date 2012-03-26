@@ -15,14 +15,15 @@
       <%= f.text_field :age, :size => '2' %><br>
 
 
-      <%= submit_tag 'edit User' %>
+
             <label for="qualification">Qualification : </label>
 
         <% @qualification.each do |p|%>
-         <%= check_box_tag 'people_ids[]', p.id %>
+         <%= check_box_tag 'people_ids[]', p.id, @emp.qualifications.include?(p) %>
         <%= p.name %>
 
           <%end%> <br>
+      <%= submit_tag 'edit User' %>
     </fieldset>
 
 <% end %>
