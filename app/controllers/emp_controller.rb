@@ -25,7 +25,7 @@ class EmpController < ApplicationController
 
   end
 
-
+# //here i have to add all the controller codes
   def edit
      @qualification=Qualification.find(:all)
     if request.get?
