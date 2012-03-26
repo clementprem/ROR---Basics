@@ -57,6 +57,7 @@ class EmpController < ApplicationController
 
     if request.post?
       @emp_form=Emp.new(params[:emp])
+      params[:people_ids] ||= []
       @emp_form.qualifications << Qualification.find(params[:people_ids])
 
 
