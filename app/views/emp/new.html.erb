@@ -1,0 +1,38 @@
+<h2>Hello </h2>
+<%= render :partial => '/components/flash_com' %>
+
+<%= form_for :emp do |f| %>
+
+      <legend>Add new user details</legend>
+
+      <label for="user_name">Name:</label><br>
+
+      <%= f.text_field :name, :size => '35' %><br>
+
+      <label for="user_address">Address: </label><br>
+
+      <%= f.text_field :address, :size=> '35' %> <br>
+
+      <label for="user_age">age:</label><br>
+
+      <%= f.text_field :age, :size => '2' %><br>
+
+
+      
+      <%= submit_tag 'Add User' %>
+
+   <label for="qualification">Qualification : </label>
+
+        <% @qualification.each do |p|%>
+         <%= check_box_tag 'people_ids[]', p.id %>
+        <%= p.name %>
+                     
+          <%end%> <br>
+
+<% end %>
+
+
+
+
+
+

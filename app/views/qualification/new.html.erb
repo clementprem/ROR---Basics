@@ -1,0 +1,16 @@
+<h2>Hello </h2>
+
+
+<%= form_for :qualification do |f| %>
+    <fieldset>
+      <legend>Add new qualification</legend>
+
+      <label for="qualification_name">Qualification:</label><br>
+
+      <%= f.text_field :name, :size => '35' %><br>
+
+      <%= submit_tag 'Add qualification' %>
+
+    </fieldset>
+
+<% end %>

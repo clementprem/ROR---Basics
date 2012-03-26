@@ -1,0 +1,34 @@
+<%= render :partial => '/components/flash_com' %>
+
+<% unless @emps.empty? %>
+    <h2>Employee detail</h2>
+
+    <% @emps.each do |u| %>
+
+
+        <p><%= u.name %> <%= u.address%> <%= u.age%>
+
+        
+         : <%= link_to 'edit', :controller => 'emp', :action => 'edit', :id => u.id %>
+         : <%= link_to 'delete', :controller => 'emp',  :action => 'delete',   :id => u.id %>
+        </p>
+
+
+
+
+
+    <% end %>
+     <p>
+      <%= link_to 'Add new Emp', :controller => 'emp', :action => 'new' %>
+      <%= link_to 'Add new qualification', :controller => 'qualification', :action => 'new' %>
+    </p>
+
+<% else %>
+
+    <p>No users currently in the database.
+      <%= link_to 'Add your first user', :controller=>'emp', :action=>'new' %>
+
+    </p>
+
+<% end %>
+

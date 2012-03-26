@@ -1,0 +1,28 @@
+<%= form_for :emp do |f| %>
+    <fieldset>
+      <legend>Edit user details</legend>
+
+      <label for="user_name">Name:</label><br>
+
+      <%= f.text_field :name, :size => '35' %><br>
+
+      <lable for="user_address">Address: </lable><br>
+
+      <%= f.text_field :address, :size=> '35' %> <br>
+
+      <label for="user_age">age:</label><br>
+
+      <%= f.text_field :age, :size => '2' %><br>
+
+
+      <%= submit_tag 'edit User' %>
+            <label for="qualification">Qualification : </label>
+
+        <% @qualification.each do |p|%>
+         <%= check_box_tag 'people_ids[]', p.id %>
+        <%= p.name %>
+
+          <%end%> <br>
+    </fieldset>
+
+<% end %>

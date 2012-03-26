@@ -1,0 +1,28 @@
+<h1><%= @header %></h1>
+
+<% unless @qualifications.empty? %>
+    <% @qualifications.each do |u| %>
+
+
+        <p><%= u.id %> <%= u.name %>
+
+        </p>
+    <% end %>
+    <%= link_to 'Add new qualification', :controller => 'qualification', :action => 'new' %>
+
+    <%= link_to 'Add new Emp', :controller => 'emp', :action => 'new' %>
+
+
+
+
+<% else %>
+
+    <p>No qualifications currently in the database.
+      <%= link_to 'Add qualification', :controller=>'qualification', :action=>'new' %>
+
+    </p>
+
+
+
+
+<% end %>
